@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Contacto -{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section>
+    <h1>Formulario de Contacto</h1>
+    <form action=""  method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit">
+    </form>
+</section>
+{% endblock %}

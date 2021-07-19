@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from .forms import ContactoForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
@@ -49,13 +50,18 @@ def salir(request):
     return redirect("acceder")
 
 
-
-
-
 def base(request):
     return render(request, "base.html")
 
 def productos (request):
     return render(request, "productos.html")
 
-
+def contacto(request):
+    form = ContactoForm()
+    if request.method == 'POST':
+        form = ContactoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            
+    context = {'form':form}
+    return render(request, "contacto.html", context)

@@ -6,6 +6,7 @@ urlpatterns = [
     path('registro/', VistaRegistro.as_view(), name="registro"),
     path('productos/', productos, name="productos"),
     path('salir/', salir, name="salir"),
-    path('acceder/', acceder, name="acceder")
+    path('acceder/', acceder, name="acceder"),
+    path('contacto/', contacto, name="contacto"),
     
 ]
