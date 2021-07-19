@@ -8,6 +8,6 @@ class Producto(models.Model):
         return self.nombre
 
     class Meta:
-        verbose_name = 'Categoría'
-        verbose_name_plural = 'Categorías'
+        verbose_name = 'Producto'
+        verbose_name_plural = 'Productos'
         ordering = ['id']
